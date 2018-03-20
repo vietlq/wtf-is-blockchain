@@ -6,6 +6,7 @@ eth-abi==0.5.0
 eth-keys==0.1.0b4
 eth-tester==0.1.0b11
 eth-utils==0.8.1
+fastecdsa==1.6.3
 idna==2.6
 lru-dict==1.1.6
 py==1.4.34
