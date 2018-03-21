@@ -9,6 +9,7 @@ eth-utils==0.8.1
 fastecdsa==1.6.3
 idna==2.6
 lru-dict==1.1.6
+plyvel==1.0.4
 py==1.4.34
 pycrypto==2.6.1
 pysha3==1.0.2
