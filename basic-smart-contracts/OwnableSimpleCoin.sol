@@ -10,6 +10,13 @@ uint256 constant TOTAL_SUPPLY = 10**18;
 
 mapping (address => uint256) balances;
 
+uint256 maxAmount = 1000;
+
+modifier notExceed(uint256 _value) {
+    require(_value <= maxAmount);
+    _;
+}
+
 event Transfer(address indexed _from, address indexed _to, uint256 _value);
 
 constructor() public {
@@ -28,7 +35,7 @@ function balanceOf(address _owner) constant public returns (uint256)
     return balances[_owner];
 }
 
-function transfer(address _to, uint256 _value) public returns (bool)
+function transfer(address _to, uint256 _value) public notExceed(_value) returns (bool)
 {
     if (balances[msg.sender] > _value)
     {
