@@ -28,7 +28,7 @@ function balanceOf(address _owner) constant public returns (uint256)
     return balances[_owner];
 }
 
-function transfer(address _to, uint256 _value) public onlyOwner returns (bool)
+function transfer(address _to, uint256 _value) public returns (bool)
 {
     if (balances[msg.sender] > _value)
     {
