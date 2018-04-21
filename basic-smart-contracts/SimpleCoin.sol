@@ -73,6 +73,10 @@ function transfer(address _to, uint256 _value) public onlyOwner returns (bool)
 
 * https://nethereum.readthedocs.io/en/latest/contracts/calling-transactions-events/
 
+* https://media.consensys.net/technical-introduction-to-events-and-logs-in-ethereum-a074d65dd61e?gi=618f94773407
+
+* https://github.com/ethereum/go-ethereum/wiki/RPC-PUB-SUB
+
 */
 
 /*
