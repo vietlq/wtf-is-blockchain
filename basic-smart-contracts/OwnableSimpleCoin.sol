@@ -27,6 +27,8 @@ constructor() public {
 
 // Administrative functions
 
+// https://ethereum.stackexchange.com/questions/25200/solidity-what-is-the-difference-between-view-and-constant
+// https://ethereum.stackexchange.com/questions/28898/when-to-use-view-and-pure-in-place-of-constant
 function getMaxAmount() view public returns(uint256) {
     return maxAmount;
 }
