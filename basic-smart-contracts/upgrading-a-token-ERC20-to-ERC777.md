@@ -1,5 +1,13 @@
 # Upgrading a Token
 
+https://medium.com/@jgm.orinoco/understanding-erc-20-token-contracts-a809a7310aa5
+
+https://theethereum.wiki/w/index.php/ERC20_Token_Standard
+
+https://github.com/OpenZeppelin/zeppelin-solidity/issues/438
+
+https://www.reddit.com/r/ethereum/comments/7qjw6x/everything_you_need_to_know_about_erc777_the_new/
+
 * Let's say we have an ERC20 token
 * We want to upgrade it to ERC777 token
 * We need to create a conversion contract UpgradeToken
