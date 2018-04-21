@@ -10,10 +10,17 @@ uint256 constant TOTAL_SUPPLY = 10**18;
 
 mapping (address => uint256) balances;
 
+mapping (address => bool) whitelist;
+
 uint256 maxAmount = 1000;
 
 modifier notExceed(uint256 _value) {
     require(_value <= maxAmount);
+    _;
+}
+
+modifier onlyWhitelisted() {
+    require(whitelist[msg.sender]);
     _;
 }
 
@@ -43,6 +50,20 @@ function setMaxAmount(uint256 _maxAmount) public onlyOwner returns(bool) {
     return true;
 }
 
+// Return values only serve internal functions
+// To inform external callers, you must emit events
+function whitelistAddress(address _addr) public onlyOwner {
+    // emit successful addition to the whitelist
+    whitelist[_addr] = true;
+}
+
+function dewhitelistAddress(address _addr) public onlyOwner {
+    if (whitelist[_addr]) {
+        // emit successful removal from the whitelist
+        delete whitelist[_addr];
+    }
+}
+
 // Functions for general public
 
 function totalSupply() pure public returns (uint256)
@@ -70,6 +91,12 @@ function transfer(address _to, uint256 _value) public notExceed(_value) returns 
     }
 
     return false;
+}
+
+// You can chain modifiers one after another
+function whitelistedTransfer(address _to, uint256 _value) public notExceed(_value) onlyWhitelisted returns (bool)
+{
+    return transfer(_to, _value);
 }
 
 }
