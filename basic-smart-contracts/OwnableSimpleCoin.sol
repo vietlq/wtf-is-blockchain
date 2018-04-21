@@ -1,5 +1,7 @@
 pragma solidity ^0.4.0;
 
+// http://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html
+
 // http://remix.readthedocs.io/en/latest/tutorial_import.html
 import "./Ownable.sol";
 //import "https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/ownership/Ownable.sol";
