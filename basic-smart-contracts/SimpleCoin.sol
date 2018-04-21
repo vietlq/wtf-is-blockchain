@@ -1,5 +1,7 @@
 pragma solidity ^0.4.0;
 
+// https://www.theblockchainconnector.com/workshop/tasks.html
+
 contract SimpleCoin {
 
 address owner;
