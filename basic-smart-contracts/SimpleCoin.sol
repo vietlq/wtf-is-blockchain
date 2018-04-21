@@ -77,6 +77,10 @@ function transfer(address _to, uint256 _value) public onlyOwner returns (bool)
 
 * https://github.com/ethereum/go-ethereum/wiki/RPC-PUB-SUB
 
+* https://ethereum.stackexchange.com/questions/1381/how-do-i-parse-the-transaction-receipt-log-with-web3-js
+
+* https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethfilter
+
 */
 
 /*
