@@ -25,6 +25,24 @@ constructor() public {
     balances[0x14723a09acff6d2a60dcdf7aa4aff308fddc160c] = 10000;
 }
 
+// Administrative functions
+
+function getMaxAmount() view public returns(uint256) {
+    return maxAmount;
+}
+
+function setMaxAmount(uint256 _maxAmount) public onlyOwner returns(bool) {
+    if (_maxAmount >= TOTAL_SUPPLY) {
+        return false;
+    }
+
+    maxAmount = _maxAmount;
+
+    return true;
+}
+
+// Functions for general public
+
 function totalSupply() pure public returns (uint256)
 {
     return TOTAL_SUPPLY;
