@@ -1,11 +1,5 @@
 # Upgrading a Token
 
-** Read constant/view/pure Smart Contracts functions from clients (JS/Python/...) will not spend gas - free! However if you call those functions from other Smart Contracts, you still have to pay gas. **
-
-```
-var test = ens.resolver('myaddr.eth').instance()
-```
-
 ## Thought Process
 
 * Let's say we have an ERC20 token
@@ -44,6 +38,22 @@ var test = ens.resolver('myaddr.eth').instance()
 * approve(address _spender, uint256 _value) returns (bool success) [Allow _spender to withdraw from your account, multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value]
 * allowance(address *_owner*, address *_spender*) constant returns (uint256 remaining) [Returns the amount which _spender is still allowed to withdraw from _owner]
 ```
+
+## Notes
+
+* Only indexed fields emitted by Solidity Events will be indexed by the Log Bloom Filter (they will be a little costlier):
+
+    event AddToCart(uint256 indexed DIN, address indexed buyer);
+
+* Note that Solidity Event data will be stored in Receipt State Tree and the caller will have to pay for their storage (there's cost per byte).
+
+* You can listen/subscribe to Solidity Events and then re-publish them via web3.shh (Whisper) or use for your event-driven apps
+
+* The only way to provide data for Oracles is to call them to update internal state of the Oracle smart contracts.
+
+* The contracts that need Oracle data will have to call the Oracle.
+
+* It's up to the owners/admins of the Oracle to decide consensus/update rules for their Oracles
 
 ## References
 
