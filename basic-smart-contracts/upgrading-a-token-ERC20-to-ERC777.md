@@ -2,6 +2,10 @@
 
 ** Read constant/view/pure Smart Contracts functions from clients (JS/Python/...) will not spend gas - free! However if you call those functions from other Smart Contracts, you still have to pay gas. **
 
+```
+var test = ens.resolver('myaddr.eth').instance()
+```
+
 ## Thought Process
 
 * Let's say we have an ERC20 token
