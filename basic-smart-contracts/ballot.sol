@@ -46,12 +46,13 @@ contract Ballot {
     }
 
     /// Give a single vote to proposal $(toProposal).
-    function vote(uint8 toProposal) public {
+    function vote(uint8 toProposal) public returns (bool _voteValid) {
         Voter storage sender = voters[msg.sender];
-        if (sender.voted || toProposal >= proposals.length) return;
+        if (sender.voted || toProposal >= proposals.length) return false;
         sender.voted = true;
         sender.vote = toProposal;
         proposals[toProposal].voteCount += sender.weight;
+        return true;
     }
 
     function winningProposal() public constant returns (uint8 _winningProposal) {
