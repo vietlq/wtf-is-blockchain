@@ -17,7 +17,7 @@ plyvel==1.0.4
 py==1.4.34
 py-ecc==1.4.2
 pycrypto==2.6.1
-pycryptodome==3.5.1
+pycryptodome==3.6.6
 pyethash==0.1.27
 pysha3==1.0.2
 pytest==3.2.3
