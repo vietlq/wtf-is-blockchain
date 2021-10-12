@@ -8,7 +8,7 @@ eth-keys==0.1.0b4
 eth-tester==0.1.0b11
 eth-utils==0.8.1
 ethereum==2.3.0
-fastecdsa==1.6.3
+fastecdsa==2.1.2
 future==0.16.0
 idna==2.6
 lru-dict==1.1.6
